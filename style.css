@@ -1,0 +1,34 @@
+
+
+
+.print > h4 {
+   color:palevioletred;
+   grid-column: 1/1;
+    
+}
+
+.formc{
+    display: flex;
+    flex-direction: column;
+    display: none;
+    
+}
+
+div > h4
+{
+   color: blueviolet;
+   border: 2px solid yellow;
+}
+
+button{
+    color:white;
+    font-size: 1rem;
+    background-color: palevioletred;
+    padding: 1rem;
+    border-radius:40px;
+    border: none;
+    justify-content: center;
+    text-align: center;
+}
+
+

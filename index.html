@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <button type="button" id="btn"> Add A New Book </button>
+  <div class="formc" style="display: none;">
+    <p> Hi! Enter your Books Details! Required fields are marked <span> * </span> </p>
+    <form id="bookForm" action="" target="_blank">
+     <label for="bookname"> Book Name: <span> * </span> </label>
+     <input type="text" placeholder="Eductaed" id="bookname" required>
+     <label for="bookauthor"> Book Author: <span> * </span> </label>
+     <input type="text" placeholder="Tara Westover" id="bookauthor" required>
+     <label for="genre"> Genre: </label>
+     <input type="text" placeholder="memoir" id="genre" >
+     <label for="read"> Read? </label>
+     <input type="checkbox" placeholder="Book Author" id="read" >
+     <input type="submit" value="Submit">
+    </form>
+</div>
+  <div class="book">
+  </div>
+
+  <div class="print">
+    
+  </div>
+
+  <div class="printd">
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,14 +1,15 @@
 
 let bookname = document.querySelector('.book');
 let printbook = document.querySelector('.print');
-const myLibrary = [ "Happy holids",  "Happylids","the kie runner", "oppp"]
+const myLibrary = [];
  
-function Book() {
-
-}
 
 function addBookToLibrary() {
-  // do stuff here
+  
+}
+
+function Book(bookname,bookAuthor,genre,read) {
+
 }
 
 function print()
@@ -36,26 +37,34 @@ const form = document.getElementById('bookForm');
 const printDiv = document.querySelector('.printd');
 
 form.addEventListener('submit', function(event) {
-  // Prevent the default form submission behavior
   event.preventDefault();
 
-  // Get the values entered by the user from the form fields
   const bookName = document.getElementById('bookname').value;
   const bookAuthor = document.getElementById('bookauthor').value;
   const genre = document.getElementById('genre').value;
   const read = document.getElementById('read').checked ? 'Yes' : 'No';
 
+  const newBook = new Book(bookName, bookAuthor, genre, read);
+
+  myLibrary.push(newBook);
+
+  displayBook(newBook);
   const submitbook = document.createElement('div');
   submitbook.classList.add('submission');
-
+ 
   submitbook.innerHTML = `
   <p>Book Name: ${bookName}</p>
   <p>Book Author: ${bookAuthor}</p>
   <p>Genre: ${genre}</p>
   <p>Read: ${read}</p>
 `;
+ 
+printDiv.appendChild(submitbook);
 
 });
+
+
+
 
 Book();
 print();

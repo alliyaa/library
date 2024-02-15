@@ -1,12 +1,7 @@
 
-let bookname = document.querySelector('.book');
-let printbook = document.querySelector('.print');
 const myLibrary = [];
  
 
-function addBookToLibrary() {
-  
-}
 
 function Book(title, author, genre, read) {
   this.title = title;
@@ -15,19 +10,6 @@ function Book(title, author, genre, read) {
   this.read = read;
 }
 
-function print()
-{
-   
-    myLibrary.forEach(element => 
-    {
-
-    let bookdiv=document.createElement('div')
-    let bookTitle = document.createElement('h4');
-    bookTitle.textContent += element
-    bookdiv.appendChild(bookTitle)
-    printbook.appendChild(bookdiv);
-   });
-}
 
 const addbtn = document.getElementById('btn');
 const formcontainer = document.querySelector('.formc');
@@ -39,6 +21,7 @@ formcontainer.style.display = 'block';
 const form = document.getElementById('bookForm');
 const printDiv = document.querySelector('.printd');
 
+  
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -52,14 +35,13 @@ form.addEventListener('submit', function(event) {
   myLibrary.push(newBook);
 
   displayBook(newBook);
- 
-printDiv.appendChild(submitbook);
+
 
 });
 
 function displayBook(book) {
   const bookDiv = document.createElement('div');
-  bookDiv.classList.add('book');
+  bookDiv.classList.add('book'); //add this class to bookDiv so its easier to target in css
 
   bookDiv.innerHTML = `
     <h4>Book Name: ${book.title}</h4>
@@ -69,13 +51,6 @@ function displayBook(book) {
   `;
 
   printDiv.appendChild(bookDiv);
-}
-
-// Function to initially display all books in the library
-function displayAllBooks() {
-  myLibrary.forEach(book => {
-    displayBook(book);
-  });
 }
 
 

@@ -8,8 +8,11 @@ function addBookToLibrary() {
   
 }
 
-function Book(bookname,bookAuthor,genre,read) {
-
+function Book(title, author, genre, read) {
+  this.title = title;
+  this.author = author;
+  this.genre = genre;
+  this.read = read;
 }
 
 function print()
@@ -49,20 +52,31 @@ form.addEventListener('submit', function(event) {
   myLibrary.push(newBook);
 
   displayBook(newBook);
-  const submitbook = document.createElement('div');
-  submitbook.classList.add('submission');
- 
-  submitbook.innerHTML = `
-  <p>Book Name: ${bookName}</p>
-  <p>Book Author: ${bookAuthor}</p>
-  <p>Genre: ${genre}</p>
-  <p>Read: ${read}</p>
-`;
  
 printDiv.appendChild(submitbook);
 
 });
 
+function displayBook(book) {
+  const bookDiv = document.createElement('div');
+  bookDiv.classList.add('book');
+
+  bookDiv.innerHTML = `
+    <h4>Book Name: ${book.title}</h4>
+    <p>Author: ${book.author}</p>
+    <p>Genre: ${book.genre}</p>
+    <p>Read: ${book.read}</p>
+  `;
+
+  printDiv.appendChild(bookDiv);
+}
+
+// Function to initially display all books in the library
+function displayAllBooks() {
+  myLibrary.forEach(book => {
+    displayBook(book);
+  });
+}
 
 
 

@@ -40,20 +40,33 @@ form.addEventListener('submit', function(event) {
 });
 
 function displayBook(book) {
+  // Create a new div element for each book
   const bookDiv = document.createElement('div');
-  bookDiv.classList.add('book'); //add this class to bookDiv so its easier to target in css
 
+  // Add the 'bookclass' class to the newly created div
+  bookDiv.classList.add('bookclass');
+
+  // Set the inner HTML of the div with book information
   bookDiv.innerHTML = `
-    <h4>Book Name: ${book.title}</h4>
+    <h4> Name: ${book.title}</h4>
     <p>Author: ${book.author}</p>
     <p>Genre: ${book.genre}</p>
     <p>Read: ${book.read}</p>
-  `;
-
-  printDiv.appendChild(bookDiv);
-}
+    <button class='delb'>Delete</button>
+    `;
+  
+    // Append the newly created div to the printDiv element
+    printDiv.appendChild(bookDiv);
+  }
+  
+  // Event delegation for delete button
+  printDiv.addEventListener('click', function(event) {
+    if (event.target.classList.contains('delb')) {
+      // Remove the parent div of the delete button
+      event.target.parentNode.remove();
+    }
+  });
 
 
 
 Book();
-print();

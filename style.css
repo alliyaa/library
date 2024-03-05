@@ -1,17 +1,39 @@
 
 
-
 .print > h4 {
    color:palevioletred;
-   grid-column: 1/1;
+   grid-row: 1/1;
     
 }
+.main
+{
+    text-align: center;
+ 
+   
 
+}
 .formc{
     display: flex;
     flex-direction: column;
-    display: none;
+     justify-content: center;
+     align-items: center;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
     
+}
+
+.formc > p 
+{
+    margin-bottom: 2rem;
+}
+
+input[type="text"] , input[type="checkbox"]
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -26,5 +48,58 @@ button{
     justify-content: center;
     text-align: center;
 }
+
+.printd {
+    display: grid;
+    grid-template-columns:  repeat(auto-fill, minmax(200px, 1fr)); /* Create auto columns with minimum width of 200px */
+    column-gap:5rem;
+    row-gap: 4rem;
+   
+  } 
+
+
+.bookclass
+{
+   padding-top: 2rem;
+    width: 15rem; /* Increase width of each book */
+    height: 15rem; /* Increase height of each book */
+    text-align: center;
+    background-color: rgb(17, 21, 104);
+    color:white;
+
+   
+}
+
+
+
+.bookclass>button
+{
+    text-align: center;
+ 
+}
+
+
+
+
+
+
+
+.bookclass {
+   
+    position: relative;
+  
+  }
+  
+  .delb {
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+
+
+
 
 
